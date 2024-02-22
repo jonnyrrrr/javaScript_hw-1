@@ -8,7 +8,7 @@ let dog_sent = ('Dexter is really fat')
 
 function findWords(str, arr){ 
     for(let i=0; i<arr.length; i++){
-      if(arr[i] == str){
+      if(str.includes(arr[i])){
         console.log(`Matched ${arr[i]}`)
       } else {
         if (arr[i] != str){
@@ -27,12 +27,13 @@ and replaces it with the string "even index" */
 rand_arr = ["Max","Baseball","Reboot","Goku","Trucks","Rodger"]
 
 function replaceEvens(arr){
-    for(let i=0; i<arr.length; i++){
-        let value = arr.splice(i + 1, 'even index');
-        return value;
+    for(let i=0; i<arr.length; i+= 2){
+       arr.splice(i , 1, 'even index');
     }
+    return arr;
     
 }
+
 
 console.log(replaceEvens(rand_arr))
 
